@@ -1,0 +1,26 @@
+name: MiTierGen
+version: '${project.version}'
+main: me.leminhbao.mitiergen.MiTierGen
+api-version: '1.20'
+prefix: MI Tier
+authors: [Le Minh Bao]
+depend:
+  - MythicLib
+  - MMOItems
+
+commands:
+  mitiergen:
+    description: Main command for MiTierGen
+    usage: /mitiergen
+    aliases: [mtg]
+
+permissions:
+  mtg.admin:
+    description: Permission for admin command
+    default: op
+  mtg.identify:
+    description: Permission for use identify command
+    default: true
+  mtg.reload:
+    description: Permission for use reload command
+    default: op
