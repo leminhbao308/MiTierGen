@@ -32,7 +32,6 @@ public class LogBuilder {
         return add("");
     }
 
-
     public LogBuilder addSeparator() {
         return add("--------------------------------------------------");
     }

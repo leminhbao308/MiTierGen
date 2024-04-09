@@ -2,7 +2,6 @@ package me.leminhbao.mitiergen.utils;
 
 import lombok.Getter;
 import me.leminhbao.mitiergen.config.ConfigConstants;
-import me.leminhbao.mitiergen.config.MiTierConfig;
 import net.Indyuce.mmoitems.api.item.build.MMOItemBuilder;
 import net.Indyuce.mmoitems.stat.data.DoubleData;
 import net.Indyuce.mmoitems.stat.data.random.RandomStatData;
@@ -17,7 +16,6 @@ public class RandomStatGenerator implements RandomStatData {
     private static final Random random = new Random();
 
     public static final RandomStatGenerator ZERO = new RandomStatGenerator(0, 0);
-
 
     public RandomStatGenerator(double minPercent, double maxPercent) {
         this.minPercent = minPercent;

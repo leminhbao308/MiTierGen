@@ -13,84 +13,9 @@ StatsUp: # Chỉ số Stats sẽ tăng trong khoảng khi giám định
         type: PERCENT
         min: 1.0
         max: 2.5
-
-
-
-
-
-
-menuSettings:
-  title: '&6&lMi Tier Gen Editor' # Tiêu đề của menu
-
-  # Không thêm mới, chỉ thay đổi nội dung
-  buttons: # Các nút chức năng
-    nextPageItem: # Nút chuyển trang tiếp theo
-      name: '&bNext Page'
-      material: ARROW
-      lore:
-        - 'Click to go to next page'
-    previousPageItem: # Nút chuyển trang trước đó
-      name: '&bPrevious Page'
-      material: ARROW
-      lore:
-        - 'Click to go to previous page'
-    backItem: # Nút quay lại
-      name: '&cBack'
-      material: BARRIER
-      lore:
-        - 'Click to go back'
-    addTierItem: # Nút thêm tier
-      name: '&aAdd Tier'
-      material: EMERALD
-      lore:
-        - 'Click to add a new tier'
-    addWeaponTypeItem: # Nút thêm loại vũ khí
-      name: '&aAdd Weapon Type'
-      material: EMERALD
-      lore:
-        - 'Click to add weapon type'
-    # Các chức năng liên quan đến thêm stat mới
-    addStatItem: # Nút thêm stat
-      name: '&aAdd Stat'
-      material: EMERALD
-      lore:
-          - 'Click to add a new stat'
-    addStatTypeItem: # Nút thêm loại stat
-      name: '&aSet Stat Type'
-      material: EMERALD
-      lore:
-        - 'Click to set stat type'
-        - 'Current: %stat_type%'
-    addStatMinItem: # Nút thêm giá trị tối thiểu
-      name: '&aAdd Stat Min'
-      material: EMERALD
-      lore:
-        - 'Click to add a new stat min'
-        - 'Current: %stat_min%'
-    addStatMaxItem: # Nút thêm giá trị tối đa
-      name: '&aAdd Stat Max'
-      material: EMERALD
-      lore:
-          - 'Click to add a new stat max'
-          - 'Current: %stat_max%'
-
-  # Không thêm mới, chỉ thay đổi nội dung
-  itemFormats: # Định dạng item
-    tierDisplay: # Định dạng hiển thị tier
-      name: '&6%tier_name%'
-      lore:
-        - '&7Click to edit this tier'
-        - '&7Right click to delete this tier'
-    weaponTypeDisplay: # Định dạng hiển thị loại vũ khí
-      name: '&6%weapon_type%'
-      lore:
-        - '&7Click to edit this weapon type'
-        - '&7Right click to delete this weapon type'
-    statDisplay: # Định dạng hiển thị stat
-      name: '&6%stat_name%'
-      lore:
-        - '&7Type: %stat_type%'
-        - '&7Min: %stat_min%'
-        - '&7Max: %stat_max%'
-        - '&7Click to edit this stat'
-        - '&7Right click to delete this stat'
+  COMMON:
+    SWORD:
+      max-durability:
+        type: NUMBER
+        min: 1
+        max: 1000

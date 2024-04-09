@@ -24,7 +24,6 @@ public class ConfigConstants {
         public static final String ADD_STAT_MIN_ITEM = "addStatMinItem";
         public static final String ADD_STAT_MAX_ITEM = "addStatMaxItem";
 
-
         public static final String TIER_DISPLAY = "tierDisplay";
         public static final String WEAPON_TYPE_DISPLAY = "weaponTypeDisplay";
         public static final String STAT_DISPLAY = "statDisplay";

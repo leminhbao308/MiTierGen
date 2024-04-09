@@ -2,7 +2,6 @@ package me.leminhbao.mitiergen;
 
 import lombok.Getter;
 import lombok.Setter;
-import me.leminhbao.mitiergen.config.MiMenuConfig;
 import me.leminhbao.mitiergen.config.MiTierConfig;
 import me.leminhbao.mitiergen.utils.mainUtils.DisableUtils;
 import me.leminhbao.mitiergen.utils.mainUtils.EnableUtils;
@@ -17,7 +16,6 @@ public final class MiTierGen extends JavaPlugin {
 
     private String prefix;
     private MiTierConfig miTierConfig;
-    private MiMenuConfig miMenuConfig;
 
     @Override
     public void onEnable() {
@@ -57,7 +55,6 @@ public final class MiTierGen extends JavaPlugin {
         String rawPrefix = getConfig().getString("Prefix", getDescription().getPrefix());
         setPrefix(ChatColor.translateAlternateColorCodes('&', rawPrefix));
         setMiTierConfig(new MiTierConfig(this));
-        setMiMenuConfig(new MiMenuConfig(this));
     }
 
     public static Logger getLoggerInstance() {

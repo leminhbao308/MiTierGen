@@ -60,7 +60,7 @@ public class CommandIdentify {
         try {
             ByteArrayInputStream inputStream = new ByteArrayInputStream(Base64Coder.decodeLines(data));
             BukkitObjectInputStream dataInput = new BukkitObjectInputStream(inputStream);
-            ItemStack stack = (ItemStack)dataInput.readObject();
+            ItemStack stack = (ItemStack) dataInput.readObject();
             dataInput.close();
             NBTItem toRebuild = NBTItem.get(stack);
             if (toRebuild.hasType()) {
@@ -85,19 +85,6 @@ public class CommandIdentify {
                 }
 
                 MiTierConfig.Item item = plugin.getMiTierConfig().getItem(rebuilt.getTier().getId(), rebuilt.getType().getId());
-
-                // TODO: Nếu stat có trong item thì thực hiện random stat
-                // TODO: Nếu không thì thêm stat vào item và thực hiện random stat
-                // rebuilt.getStats().forEach((stat) -> {
-                //     if (item.getAppliedStats().containsKey(stat))
-                //         if (stat instanceof DoubleStat) {
-                //             RandomStatGenerator rsg = new RandomStatGenerator(item.getAppliedStats().get(stat.getId()).getMinPercent(), item.getAppliedStats().get(stat.getId()).getMaxPercent());
-                //             DoubleData sData = rsg.randomize(rebuilt.getData(stat), item.getAppliedStats().get(stat.getId()).getType());
-                //             rebuilt.setData(stat, sData);
-                //
-                //             plugin.getLogger().info("Stat " + stat.getId() + " of " + rebuilt.getType().getId() + " in tier " + rebuilt.getTier().getId() + " has been changed to " + sData.getValue());
-                //         }
-                // });
 
                 item.getAppliedStats().forEach((stat, sData) -> {
                     if (rebuilt.getStats().contains(stat)) {
