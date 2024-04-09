@@ -3,7 +3,7 @@ version: '${project.version}'
 main: me.leminhbao.mitiergen.MiTierGen
 api-version: '1.20'
 prefix: MI Tier
-authors: [Le Minh Bao]
+authors: [ Le Minh Bao ]
 depend:
   - MythicLib
   - MMOItems
@@ -12,9 +12,10 @@ commands:
   mitiergen:
     description: Main command for MiTierGen
     usage: /mitiergen
-    aliases: [mtg]
+    aliases: [ mtg ]
 
 permissions:
+  # Admin Section
   mtg.admin:
     description: Permission for admin command
     default: op
@@ -24,3 +25,26 @@ permissions:
   mtg.reload:
     description: Permission for use reload command
     default: op
+
+  # Edit Section
+  mtg.create:
+    description: Permission for use create command
+    default: op
+    children:
+      - mtg.create.tier
+      - mtg.create.weapon
+      - mtg.create.stat
+  mtg.delete:
+    description: Permission for use delete command
+    default: op
+    children:
+      - mtg.delete.tier
+      - mtg.delete.weapon
+      - mtg.delete.stat
+  mtg.update:
+    description: Permission for use update command
+    default: op
+    children:
+      - mtg.update.type
+      - mtg.update.min
+      - mtg.update.max

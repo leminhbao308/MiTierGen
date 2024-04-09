@@ -2,10 +2,11 @@ package me.leminhbao.mitiergen.utils.mainUtils;
 
 import me.leminhbao.mitiergen.MiTierGen;
 import me.leminhbao.mitiergen.commands.CommandRouter;
-import me.leminhbao.mitiergen.config.MiMenuConfig;
 import me.leminhbao.mitiergen.config.MiTierConfig;
 import me.leminhbao.mitiergen.utils.ChatColor;
 import me.leminhbao.mitiergen.utils.LogBuilder;
+
+import java.util.Map;
 
 public class EnableUtils {
     public static void logPluginInfo(MiTierGen plugin) {
@@ -56,11 +57,12 @@ public class EnableUtils {
         logBuilder.add("Validating config...", ChatColor.YELLOW);
 
         plugin.setMiTierConfig(new MiTierConfig(plugin));
-        plugin.setMiMenuConfig(new MiMenuConfig(plugin));
 
+        for (Map.Entry<String, MiTierConfig.Tier> tier : plugin.getMiTierConfig().getTierList().entrySet()) {
+            logBuilder.add("Loaded tier " + tier.getKey() + " with " + tier.getValue().getAppliedItems().size() + " items...", ChatColor.YELLOW);
+        }
         logBuilder.add("Total tiers loaded: " + plugin.getMiTierConfig().getTierList().size(), ChatColor.AQUA);
-        logBuilder.add("Menu Editor has loaded: " + (plugin.getMiMenuConfig().isValid() ? "Successfully" : "Failed"), (plugin.getMiMenuConfig().isValid() ? ChatColor.GREEN : ChatColor.RED));
-        logBuilder.add("MiTierConfig: " + plugin.getMiTierConfig().toString(), ChatColor.AQUA);
+        logBuilder.addNewLine();
 
         String rawPrefix = plugin.getConfig().getString("Prefix", plugin.getDescription().getPrefix());
         plugin.setPrefix(org.bukkit.ChatColor.translateAlternateColorCodes('&', rawPrefix));
